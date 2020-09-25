@@ -1,8 +1,8 @@
-import Image from 'assets/images/webpack.png';
+import Header from 'components/Header';
+import Content from 'components/Content';
+
 import ImageLoader from 'components/ImageLoader';
+import WebpackImage from 'assets/images/webpack.png';
 
-const root = document.getElementById('root');
-
-const imageLoader = ImageLoader(Image);
-
-root.appendChild(imageLoader);
+const header = new Header().render();
+const content = new Content().render(ImageLoader(WebpackImage));

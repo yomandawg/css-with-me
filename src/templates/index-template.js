@@ -6,6 +6,7 @@ export default ({ htmlWebpackPlugin }) =>
       <title>${htmlWebpackPlugin.options.title}</title>
     </head>
     <body>
-      <div id="root"></div>
+      <nav id="nav"></nav>
+      <section id="section"></section>
     </body>
   </html>`;

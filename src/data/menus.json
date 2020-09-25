@@ -1,0 +1,5 @@
+{
+  "Home": "/",
+  "Examples": ["colors", "backgrounds", "borders", "margins", "padding"],
+  "About": "/about"
+}
