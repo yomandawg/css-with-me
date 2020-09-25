@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 /**@type {import('webpack').Configuration} */
 module.exports = {
@@ -9,12 +11,14 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
   resolve: {
     alias: {
       assets: path.resolve(__dirname, 'src/assets/'),
       components: path.resolve(__dirname, 'src/components/'),
+      data: path.resolve(__dirname, 'src/data/'),
       pages: path.resolve(__dirname, 'src/pages/'),
     },
   },
@@ -37,7 +41,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ['@babel/env'],
+            plugins: ['transform-class-properties'],
           },
         },
       },
@@ -80,5 +85,6 @@ module.exports = {
       title: 'index page',
       meta: { description: 'index page' },
     }),
+    // new BundleAnalyzerPlugin(),
   ],
 };

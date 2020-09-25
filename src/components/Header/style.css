@@ -1,0 +1,22 @@
+.menu__container {
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+.menu:first-child {
+  margin-left: 20px;
+}
+.menu {
+  padding: 20px;
+  color: royalblue;
+}
+
+.menu__list {
+  list-style: none;
+  position: absolute;
+}
+
+.menu__list__item {
+}
